@@ -41,7 +41,7 @@ const diccionario = {
   "yo":"In",
   "tú":"At",
   "usted":"Lal",
-  "el":"Are'",
+  "él":"Are'",
   "ella":"Are'",
   "nosotros":"Uj",
   "ustedes":"Alaq",
@@ -124,7 +124,7 @@ const diccionario = {
   "19":"B'elejlajuj",
   "20":"Juk'al"
 };
-let ultimaPalabra = ""; // guardará la última palabra traducida
+let ultimaPalabra = ""; 
 
 function traducir() {
   const palabra = document.getElementById("input-word").value.toLowerCase().trim();
@@ -134,8 +134,8 @@ function traducir() {
   if (diccionario[palabra]) {
     const traduccion = diccionario[palabra];
     resultado.textContent = `En K'iche' "${palabra}" es: "${traduccion}"`;
-    ultimaPalabra = palabra; // guarda la palabra actual para el audio
-    btnAudio.disabled = false; // habilita el botón de reproducir
+    ultimaPalabra = palabra; 
+    btnAudio.disabled = false; 
   } else {
     resultado.textContent = "Palabra no encontrada. Verifique la ortografía.";
     btnAudio.disabled = true;
@@ -143,7 +143,6 @@ function traducir() {
   }
 }
 
-// 🎧 Función separada para reproducir audio
 function reproducir() {
   if (ultimaPalabra) {
     const audio = new Audio(`audio/${diccionario[ultimaPalabra]}.mp3`);

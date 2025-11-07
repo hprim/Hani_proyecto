@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Inicializar EmailJS con tu clave pública
   emailjs.init("4e_P7G-2erCGU7xXR");
 
   const form = document.getElementById("sugerencia-form");
@@ -20,11 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
    
     if (!data.name || !data.email || !data.message || !data.title) {
       estado.textContent = "Por favor, completa todos los campos antes de enviar.";
-      estado.style.color = "gray";
       return;
     }
-
-    
     emailjs.send("service_invSFHK", "template_kigjp5m", data)
       .then(() => {
         estado.textContent = "Tu sugerencia fue enviada con éxito";
